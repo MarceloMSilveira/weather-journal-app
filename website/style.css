@@ -90,6 +90,11 @@ body{
     height: max-content;
 }
 
+.buttons > button:hover, .buttons > button:focus {
+    font-weight: bolder;
+    background-color: #2f3c59;
+}
+
 .title{
 
 }
