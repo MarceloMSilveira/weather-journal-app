@@ -10,8 +10,13 @@
   "keywords": [],
   "author": "Marcelus 1lveira <marcelomendes.silveira@gmail.com>",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   }
 }
