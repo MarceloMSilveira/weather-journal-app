@@ -13,8 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
-
+let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 function setCurrentYearInFooter() {
   const spanElement = document.querySelector("#this-year");
   const thisYear = new Date().getFullYear();
@@ -22,7 +21,6 @@ function setCurrentYearInFooter() {
   console.log(thisYear);
   spanElement.textContent = thisYear;
 }
-
 setCurrentYearInFooter();
 
 /***/ }),
@@ -4208,7 +4206,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("324223a367ede8867477")
+/******/ 		__webpack_require__.h = () => ("9c06ec6d3a3c7cd5e726")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
