@@ -8,7 +8,7 @@ let projectData = {
   date: 'test',
   place: 'test',
   temperature: 'test',
-  user_feeling: 'test'
+  feelings: 'test'
 };
 
 // Require Express to run server and routes
@@ -36,6 +36,7 @@ app.get('/test',(req,res)=>{
 })
 
 function setProjectData(receivedData) {
+  
   projectData = receivedData;
   // projectData.date = receivedData.date;
   // projectData.place = receivedData.place;
@@ -45,10 +46,13 @@ function setProjectData(receivedData) {
 
 
 app.get('/all', (req,res)=>{
+  console.log('inside /all')
   res.send(projectData);
 })
 
 app.post('/setData', (req,res)=>{
+  //test
+  console.log('antes: ' +projectData.place)
   try {
     const receivedData = req.body;
     if (!receivedData) {throw new Error('Nenhum conteúdo foi recebido')}
@@ -56,6 +60,7 @@ app.post('/setData', (req,res)=>{
     
     //Em caso de passar pelos testes de erro:
     setProjectData(receivedData);
+    console.log('depois: ' + projectData.place);
     res.send({success:true, message: 'dados recebidos corretamente'}); 
   } catch (error) {
     console.log(error);
