@@ -4,7 +4,7 @@ const __dirname = import.meta.dirname;
 
 
 // Setup empty JS object to act as endpoint for all routes
-const projectData = {
+let projectData = {
   date: 'test',
   place: 'test',
   temperature: 'test',
@@ -35,6 +35,33 @@ app.get('/test',(req,res)=>{
   res.send('Success!');
 })
 
+function setProjectData(receivedData) {
+  projectData = receivedData;
+  // projectData.date = receivedData.date;
+  // projectData.place = receivedData.place;
+  // projectData.temperature = receivedData.temperature;
+  // projectData.user_feeling = receivedData.user_feeling;
+}
+
+
+app.get('/all', (req,res)=>{
+  res.send(projectData);
+})
+
+app.post('/setData', (req,res)=>{
+  try {
+    const receivedData = req.body;
+    if (!receivedData) {throw new Error('Nenhum conteúdo foi recebido')}
+    if (Object.keys(receivedData).length !== 4) {throw new Error('Dado incorreto enviado')}
+    
+    //Em caso de passar pelos testes de erro:
+    setProjectData(receivedData);
+    res.send({success:true, message: 'dados recebidos corretamente'}); 
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({success:false, message: error.message});
+  }
+})
 
 // Setup Server
 app.listen(port, ()=>{
