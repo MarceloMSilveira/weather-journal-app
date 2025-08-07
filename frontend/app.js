@@ -21,6 +21,15 @@ const apikey = 'dd6c3ba86f66f547459582b843e14bc8';
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
+
+
+// async function callPost() {
+//   const generateBtn = document.getElementById('generate');
+//   generateBtn.addEventListener('click',(evt)=>{
+
+//   })
+// }
+
 function setCurrentYearInFooter() {
   const spanElement = document.querySelector("#this-year");
   const thisYear = new Date().getFullYear();

@@ -32,6 +32,14 @@ const apikey = 'dd6c3ba86f66f547459582b843e14bc8';
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+
+// async function callPost() {
+//   const generateBtn = document.getElementById('generate');
+//   generateBtn.addEventListener('click',(evt)=>{
+
+//   })
+// }
+
 function setCurrentYearInFooter() {
   const spanElement = document.querySelector("#this-year");
   const thisYear = new Date().getFullYear();
@@ -9033,7 +9041,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("d5d75574e37316f260ba")
+/******/ 		__webpack_require__.h = () => ("0a7b2669eed4f2623826")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
