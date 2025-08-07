@@ -20,7 +20,18 @@ const apikey = 'dd6c3ba86f66f547459582b843e14bc8';
 
 async function setUI() {
   const {data:allData} = await axios.get('http://localhost:3010/all');
-  console.log(`dentro de setUI: ${allData.date}`);
+  
+  const placeDiv = document.querySelector('#results .place');
+  placeDiv.textContent = allData.place;
+
+  const dateDiv = document.querySelector('#results .date');
+  dateDiv.textContent = allData.date;
+
+  const temperatureDiv = document.querySelector('#results .temperature');
+  temperatureDiv.textContent = allData.temperature;
+
+  const feelingsDiv = document.querySelector('#results .feelings');
+  feelingsDiv.textContent = allData.feelings;
 }
 
 function toCelsius(k) {
