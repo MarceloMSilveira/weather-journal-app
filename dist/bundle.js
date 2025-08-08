@@ -41,7 +41,7 @@ async function setUI() {
     entryDiv.classList.add('entryHolder');
     entryDiv.innerHTML = ` <div class ="place">${result.place}</div>
       <div class = "date">${result.date}</div> 
-      <div class = "temperature">Temp: ${result.temperature}</div>
+      <div class = "temperature">Temp: ${result.temperature} degres</div>
       <div class = "feelings">${result.feelings}</div>
       <p>-----------</p>
     `;
@@ -9116,7 +9116,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("fdaca26192462341eef3")
+/******/ 		__webpack_require__.h = () => ("e84c45bbd8bae03e9ec9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
