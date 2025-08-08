@@ -19,21 +19,21 @@ const baseURL = "https://api.openweathermap.org/data/2.5/weather";
 const apikey = 'dd6c3ba86f66f547459582b843e14bc8';
 
 async function setUI() {
-  const [allResults] = await axios.get('http://localhost:3010/all');
-  
-  console.log(allResults[0].place)
-
-  // const placeDiv = document.querySelector('#results .place');
-  // placeDiv.textContent = allData.place;
-
-  // const dateDiv = document.querySelector('#results .date');
-  // dateDiv.textContent = allData.date;
-
-  // const temperatureDiv = document.querySelector('#results .temperature');
-  // temperatureDiv.textContent = allData.temperature;
-
-  // const feelingsDiv = document.querySelector('#results .feelings');
-  // feelingsDiv.textContent = allData.feelings;
+  const {data:allResults} = await axios.get('http://localhost:3010/all');
+  const allEntriesDiv = document.querySelector("#allEntries")
+  allEntriesDiv.innerHTML = '';
+  for (const result of allResults) {
+    const entryDiv = document.createElement('div');
+    entryDiv.classList.add('entryHolder');
+    entryDiv.innerHTML =
+    ` <div class ="place">${result.place}</div>
+      <div class = "date">${result.date}</div> 
+      <div class = "temperature">${result.temperature}</div>
+      <div class = "feelings">${result.feelings}</div>
+      <p>-----------</p>
+    `
+    allEntriesDiv.appendChild(entryDiv);
+  }
 }
 
 function toCelsius(k) {

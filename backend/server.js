@@ -49,13 +49,11 @@ function setProjectData(receivedData) {
 
 
 app.get('/all', (req,res)=>{
-  console.log('inside /all')
+console.log(`inside /all ${results[0].place}`)
   res.send(results);
 })
 
 app.post('/setData', (req,res)=>{
-  //test
-  console.log('antes: ' +projectData.place)
   try {
     const receivedData = req.body;
     if (!receivedData) {throw new Error('Nenhum conteúdo foi recebido')}
@@ -63,7 +61,6 @@ app.post('/setData', (req,res)=>{
     
     //Em caso de passar pelos testes de erro:
     setProjectData(receivedData);
-    console.log('depois: ' + projectData.place);
     res.send({success:true, message: 'dados recebidos corretamente'}); 
   } catch (error) {
     console.log(error);
