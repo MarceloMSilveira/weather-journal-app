@@ -40,7 +40,7 @@ app.get('/test',(req,res)=>{
 function setProjectData(receivedData) {
   
   projectData = receivedData;
-  results.push(projectData);
+  results = [projectData, ...results];
   // projectData.date = receivedData.date;
   // projectData.place = receivedData.place;
   // projectData.temperature = receivedData.temperature;

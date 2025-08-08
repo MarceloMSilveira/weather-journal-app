@@ -97,13 +97,15 @@ body{
 }
 
 .title{
-
+    font-size: 1.5rem;
 }
 
-.entyHolder p {
-    text-align: center;
+
+
+.entryHolder {
     border: 1px solid;
     border-radius: 15px;
+    padding: 10px 15px;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -148,6 +150,7 @@ textarea{
 #allEntries {
     display: grid;
     column-gap: 10px;
+    row-gap: 10px;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     width: 95%;

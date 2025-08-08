@@ -28,7 +28,7 @@ async function setUI() {
     entryDiv.innerHTML =
     ` <div class ="place">${result.place}</div>
       <div class = "date">${result.date}</div> 
-      <div class = "temperature">${result.temperature}</div>
+      <div class = "temperature">Temp: ${result.temperature}</div>
       <div class = "feelings">${result.feelings}</div>
       <p>-----------</p>
     `
