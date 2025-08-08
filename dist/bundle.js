@@ -31,17 +31,20 @@ https://api.openweathermap.org/data/2.5/weather?zip=32801,us&appid=dd6c3ba86f66f
 const baseURL = "https://api.openweathermap.org/data/2.5/weather";
 const apikey = 'dd6c3ba86f66f547459582b843e14bc8';
 async function setUI() {
-  const {
-    data: allData
-  } = await axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3010/all');
-  const placeDiv = document.querySelector('#results .place');
-  placeDiv.textContent = allData.place;
-  const dateDiv = document.querySelector('#results .date');
-  dateDiv.textContent = allData.date;
-  const temperatureDiv = document.querySelector('#results .temperature');
-  temperatureDiv.textContent = allData.temperature;
-  const feelingsDiv = document.querySelector('#results .feelings');
-  feelingsDiv.textContent = allData.feelings;
+  const [allResults] = await axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3010/all');
+  console.log(allResults[0].place);
+
+  // const placeDiv = document.querySelector('#results .place');
+  // placeDiv.textContent = allData.place;
+
+  // const dateDiv = document.querySelector('#results .date');
+  // dateDiv.textContent = allData.date;
+
+  // const temperatureDiv = document.querySelector('#results .temperature');
+  // temperatureDiv.textContent = allData.temperature;
+
+  // const feelingsDiv = document.querySelector('#results .feelings');
+  // feelingsDiv.textContent = allData.feelings;
 }
 function toCelsius(k) {
   return k - 273.15;
@@ -9102,7 +9105,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5789550f0d45b9bc6a18")
+/******/ 		__webpack_require__.h = () => ("b3e3795f924900572827")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

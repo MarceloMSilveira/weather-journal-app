@@ -11,6 +11,8 @@ let projectData = {
   feelings: 'test'
 };
 
+let results = [];
+
 // Require Express to run server and routes
 import express from "express";
 import cors from "cors";
@@ -38,6 +40,7 @@ app.get('/test',(req,res)=>{
 function setProjectData(receivedData) {
   
   projectData = receivedData;
+  results.push(projectData);
   // projectData.date = receivedData.date;
   // projectData.place = receivedData.place;
   // projectData.temperature = receivedData.temperature;
@@ -47,7 +50,7 @@ function setProjectData(receivedData) {
 
 app.get('/all', (req,res)=>{
   console.log('inside /all')
-  res.send(projectData);
+  res.send(results);
 })
 
 app.post('/setData', (req,res)=>{
